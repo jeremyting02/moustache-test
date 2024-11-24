@@ -1,0 +1,32 @@
+.productDetails {
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	max-width: 1500px;
+	border: 1px solid #ddd; /* Optional: Add a border to visualize the area */
+}
+
+.productImageDiv {
+	width: 50%;
+	height: auto;
+}
+
+.productImageDiv {
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center; /* Centers vertically */
+	width: 50%;
+	height: auto;
+	border: 1px solid #ddd; /* Optional: Add a border to visualize the area */
+	overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.productImageDiv img {
+	max-width: 300px;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.productInfo {
+	flex: 1;
+}

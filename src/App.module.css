@@ -1,0 +1,9 @@
+.appRoot {
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	width: 100%;
+}
+
+.appRoot2 {
+	max-width: 1440px;
+}
