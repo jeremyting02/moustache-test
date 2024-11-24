@@ -5,5 +5,10 @@
 }
 
 .appRoot2 {
+	display: flex;
+	flex-direction: column; /* Stack the children vertically */
+	align-items: center; /* Centers horizontally */
+	width: 100%;
+	min-height: 100vh; /* Make the container take up the full viewport height */
 	max-width: 1440px;
 }

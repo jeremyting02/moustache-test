@@ -4,8 +4,12 @@ import styles from "./Header.module.css";
 
 const Header = ({ cart, onUpdateQuantity }) => {
 	return (
-		<div className={styles.header}>
-			<MiniCart cart={cart} onUpdateQuantity={onUpdateQuantity} />
+		<div className={styles.headerContainer}>
+			<div className={styles.headerContent}>
+				<div className={styles.cartButton}>
+					<MiniCart cart={cart} onUpdateQuantity={onUpdateQuantity} />
+				</div>
+			</div>
 		</div>
 	);
 };

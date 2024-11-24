@@ -47,8 +47,8 @@ const ProductDetails = ({ onAddToCart }) => {
 				<img src={product.imageURL} alt={product.title} />
 			</div>
 			<div className={styles.productInfo}>
-				<h2>{product.title}</h2>
-				<p>${product.price.toFixed(2)}</p>
+				<h2 className={styles.productTitle}>{product.title}</h2>
+				<p className={styles.productPrice}>${product.price.toFixed(2)}</p>
 				<p>{product.description}</p>
 				<div>
 					{product.sizeOptions.map((size) => (
