@@ -50,15 +50,26 @@ const ProductDetails = ({ onAddToCart }) => {
 				<h2 className={styles.productTitle}>{product.title}</h2>
 				<p className={styles.productPrice}>${product.price.toFixed(2)}</p>
 				<p>{product.description}</p>
-				<div>
+
+				{/* Size Line */}
+				<div className={styles.sizeLine}>
+					<span className={styles.sizeText}>
+						SIZE<span className={styles.required}>*</span> {selectedSize || ""}
+					</span>
+				</div>
+
+				<div className={styles.sizeButtons}>
 					{product.sizeOptions.map((size) => (
-						<button key={size.id} onClick={() => setSelectedSize(size.label)} className={selectedSize === size.label ? "selected" : ""}>
+						<button key={size.id} onClick={() => setSelectedSize(size.label)} className={selectedSize === size.label ? styles.selected : ""}>
 							{size.label}
 						</button>
 					))}
 				</div>
-				{error && <p>{error}</p>}
-				<button onClick={handleAddToCart}>Add to Cart</button>
+
+				{error && <p className={styles.error}>{error}</p>}
+				<button onClick={handleAddToCart} className={styles.addToCart}>
+					ADD TO CART
+				</button>
 			</div>
 		</div>
 	);
