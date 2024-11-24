@@ -20,7 +20,6 @@ const MiniCart = ({ cart }) => {
 			{/* Cart Pop-up */}
 			{isCartVisible && (
 				<div className={styles.cartPopUp}>
-					<h3 style={{ margin: "10px" }}>Cart Items</h3>
 					{cart.length === 0 ? (
 						<p style={{ margin: "10px" }}>Your cart is empty.</p>
 					) : (
