@@ -1,22 +1,42 @@
-import React from 'react';
+import React from "react";
+import styles from "./CartItem.module.css";
 
-const CartItem = ({ item, updateCart }) => {
-  const handleQuantityChange = (quantity) => {
-    updateCart(item, quantity);
-  };
+const CartItem = ({ item, onUpdateQuantity, onRemoveItem }) => {
+	return (
+		<li className={styles.cartItem}>
+			{/* Item Image */}
+			<img src={item.imageURL} alt={item.title} className={styles.itemImage} />
 
-  return (
-    <li className="cart-item">
-      <p>{item.name} - {item.size}</p>
-      <p>${item.price.toFixed(2)} x {item.quantity}</p>
-      <input
-        type="number"
-        value={item.quantity}
-        min="1"
-        onChange={(e) => handleQuantityChange(Number(e.target.value))}
-      />
-    </li>
-  );
+			{/* Item Details */}
+			<div className={styles.itemDetails}>
+				{/* Item Name */}
+				<p className={styles.itemName}>{item.title}</p>
+
+				{/* Quantity and Price */}
+				<p className={styles.itemQuantityPrice}>
+					{item.quantity}x ${item.price.toFixed(2)}
+				</p>
+
+				{/* Item Size */}
+				<p className={styles.itemSize}>Size: {item.size}</p>
+
+				<div className={styles.spacer} />
+
+				{/* Controls */}
+				<div className={styles.itemControls}>
+					<button className={styles.quantityButton} onClick={() => onUpdateQuantity(item, 1)}>
+						+
+					</button>
+					<button className={styles.quantityButton} onClick={() => onUpdateQuantity(item, -1)}>
+						-
+					</button>
+					<button className={styles.removeButton} onClick={() => onRemoveItem(item)}>
+						Remove
+					</button>
+				</div>
+			</div>
+		</li>
+	);
 };
 
 export default CartItem;

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import CartItem from "./CartItem";
 import styles from "./MiniCart.module.css";
 
-const MiniCart = ({ cart }) => {
+const MiniCart = ({ cart, onUpdateQuantity, onRemoveItem }) => {
 	const [isCartVisible, setIsCartVisible] = useState(false);
 
 	const toggleCart = () => {
@@ -21,23 +22,11 @@ const MiniCart = ({ cart }) => {
 			{isCartVisible && (
 				<div className={styles.cartPopUp}>
 					{cart.length === 0 ? (
-						<p style={{ margin: "10px" }}>Your cart is empty.</p>
+						<p className={styles.emptyCart}>Your cart is empty.</p>
 					) : (
-						<ul style={{ listStyleType: "none", padding: "10px" }}>
+						<ul className={styles.cartList}>
 							{cart.map((item, index) => (
-								<li
-									key={index}
-									style={{
-										display: "flex",
-										justifyContent: "space-between",
-										marginBottom: "10px",
-									}}
-								>
-									<span>
-										{item.title} ({item.size})
-									</span>
-									<span>x{item.quantity}</span>
-								</li>
+								<CartItem key={`${item.id}-${item.size}`} item={item} onUpdateQuantity={onUpdateQuantity} onRemoveItem={onRemoveItem} />
 							))}
 						</ul>
 					)}

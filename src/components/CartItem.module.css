@@ -1,0 +1,52 @@
+.cartItem {
+	display: flex;
+	align-items: stretch;
+	gap: 10px;
+	font-size: small;
+	padding: 20px;
+}
+
+.itemImage {
+	width: 80px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.itemDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1;
+}
+
+.itemName {
+	margin: 0;
+}
+
+.itemQuantityPrice,
+.itemSize {
+	color: grey;
+	margin: 2px 0;
+}
+
+.itemControls {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.quantityButton {
+	padding: 5px 10px;
+	width: 30px;
+	border-radius: 3px;
+}
+
+.removeButton {
+	border-radius: 3px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.spacer {
+	flex: 1;
+}

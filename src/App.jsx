@@ -24,10 +24,14 @@ const App = () => {
 		);
 	};
 
+	const handleRemoveItem = (item) => {
+		setCart((prevCart) => prevCart.filter((cartItem) => !(cartItem.id === item.id && cartItem.size === item.size)));
+	};
+
 	return (
 		<div className={styles.appRoot}>
 			<div className={styles.appRoot2}>
-				<Header cart={cart} onUpdateQuantity={handleUpdateQuantity} />
+				<Header cart={cart} onUpdateQuantity={handleUpdateQuantity} onRemoveItem={handleRemoveItem} />
 				<ProductDetails onAddToCart={handleAddToCart} />
 			</div>
 		</div>

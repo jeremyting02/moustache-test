@@ -2,12 +2,12 @@ import React from "react";
 import MiniCart from "./MiniCart";
 import styles from "./Header.module.css";
 
-const Header = ({ cart, onUpdateQuantity }) => {
+const Header = ({ cart, onUpdateQuantity, onRemoveItem }) => {
 	return (
 		<div className={styles.headerContainer}>
 			<div className={styles.headerContent}>
 				<div className={styles.cartButton}>
-					<MiniCart cart={cart} onUpdateQuantity={onUpdateQuantity} />
+					<MiniCart cart={cart} onUpdateQuantity={onUpdateQuantity} onRemoveItem={onRemoveItem} />
 				</div>
 			</div>
 		</div>
