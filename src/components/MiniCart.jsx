@@ -1,33 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./MiniCart.module.css";
 
-const MiniCart = ({ cart, onUpdateQuantity }) => {
-  const handleQuantityChange = (product, delta) => {
-    onUpdateQuantity(product, delta);
-  };
+const MiniCart = ({ cart }) => {
+	const [isCartVisible, setIsCartVisible] = useState(false);
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+	const toggleCart = () => {
+		setIsCartVisible((prev) => !prev);
+	};
 
-  return (
-    <div>
-      <h2>Mini Cart</h2>
-      {cart.map((item) => (
-        <div key={`${item.id}-${item.size}`}>
-          <p>
-            {item.title} - {item.size} (${item.price.toFixed(2)})
-          </p>
-          <div>
-            <button onClick={() => handleQuantityChange(item, -1)}>-</button>
-            <span>{item.quantity}</span>
-            <button onClick={() => handleQuantityChange(item, 1)}>+</button>
-          </div>
-        </div>
-      ))}
-      <h3>Total: ${total.toFixed(2)}</h3>
-    </div>
-  );
+	const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+	return (
+		<div style={{ position: "relative" }}>
+			{/* Cart Button */}
+			<button onClick={toggleCart} className={styles.cartButton}>
+				My Cart ({totalItems})
+			</button>
+
+			{/* Cart Pop-up */}
+			{isCartVisible && (
+				<div className={styles.cartPopUp}>
+					<h3 style={{ margin: "10px" }}>Cart Items</h3>
+					{cart.length === 0 ? (
+						<p style={{ margin: "10px" }}>Your cart is empty.</p>
+					) : (
+						<ul style={{ listStyleType: "none", padding: "10px" }}>
+							{cart.map((item, index) => (
+								<li
+									key={index}
+									style={{
+										display: "flex",
+										justifyContent: "space-between",
+										marginBottom: "10px",
+									}}
+								>
+									<span>
+										{item.title} ({item.size})
+									</span>
+									<span>x{item.quantity}</span>
+								</li>
+							))}
+						</ul>
+					)}
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default MiniCart;
