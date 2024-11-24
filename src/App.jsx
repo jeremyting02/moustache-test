@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductDetails from "./components/ProductDetails";
-import MiniCart from "./components/MiniCart";
+import Header from "./components/Header";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -35,8 +35,8 @@ const App = () => {
 
   return (
     <div>
+      <Header cart={cart} onUpdateQuantity={handleUpdateQuantity} />
       <ProductDetails onAddToCart={handleAddToCart} />
-      <MiniCart cart={cart} onUpdateQuantity={handleUpdateQuantity} />
     </div>
   );
 };
