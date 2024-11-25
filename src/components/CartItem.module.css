@@ -54,6 +54,10 @@
 	cursor: pointer;
 }
 
+.removeButton:hover {
+	border-color: black;
+}
+
 .spacer {
 	flex: 1;
 }
