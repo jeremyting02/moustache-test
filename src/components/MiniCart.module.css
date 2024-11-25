@@ -1,0 +1,38 @@
+.cartButton {
+	font-size: small;
+	padding: 10px 20px;
+	background: rgba(0, 0, 0, 0);
+	color: grey;
+	border: none;
+	cursor: pointer;
+}
+
+.cartButton:hover {
+	padding: 10px 20px;
+	background: rgba(0, 0, 0, 0);
+	color: black;
+	border: none;
+	cursor: pointer;
+}
+
+.cartPopUp {
+	position: absolute;
+	top: 35px;
+	right: 0px;
+	background: white;
+	border: 1px solid rgb(221, 221, 221);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+	width: 300px;
+	z-index: 10;
+}
+
+.emptyCart {
+	text-align: center;
+	color: #555;
+}
+
+.cartList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}

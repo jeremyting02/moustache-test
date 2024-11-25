@@ -1,0 +1,19 @@
+.headerContainer {
+	display: flex;
+	justify-content: center; /* Centers the header content horizontally */
+	background-color: #f6f6f7;
+	align-items: center;
+	margin: 10px 0;
+	width: 100%;
+}
+.headerContent {
+	max-width: 1200px; /* Restrict the content width */
+	width: 100%; /* Ensure the content spans the container width */
+	display: flex; /* Enable flex layout for positioning */
+	align-items: center; /* Align items vertically */
+	justify-content: space-between; /* Space out the header items */
+}
+
+.cartButton {
+	margin-left: auto; /* Pushes the cart button to the far right */
+}

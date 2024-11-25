@@ -1,0 +1,109 @@
+.productDetails {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	margin-top: 20px;
+	gap: 20px;
+	max-width: 1100px;
+	font-size: small;
+}
+
+.productImageDiv {
+	flex: 1;
+	max-width: 50%;
+	display: flex;
+	justify-content: center; /* Centers horizontally */
+	align-items: center; /* Centers vertically */
+	width: 50%;
+	height: auto;
+	overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.productImageDiv img {
+	width: 100%;
+	max-width: 400px;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.productTitle {
+	font-size: 1.5em;
+	font-weight: 500;
+	color: black;
+}
+
+.productPrice {
+	font-weight: bold;
+	padding: 5px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: black;
+}
+
+.productInfo {
+	flex: 1;
+	color: grey;
+}
+
+.sizeLine {
+	margin: 15px 0;
+	font-weight: bold;
+	color: grey;
+}
+
+.sizeText {
+	display: inline;
+}
+
+.required {
+	color: red;
+}
+
+.selectedSize {
+	color: black; /* Bold, black color for the selected size */
+}
+
+.sizeButtons button {
+	margin-right: 10px;
+	padding: 10px 15px;
+	border-color: darkgrey;
+	color: darkgrey;
+}
+
+.sizeButtons button:hover {
+	border-color: black;
+	color: white;
+}
+
+.sizeButtons .selected {
+	border-color: black;
+	color: black;
+}
+
+.addToCart {
+	font-weight: bold;
+	margin-top: 15px;
+	padding: 10px 20px;
+}
+
+.error {
+	margin-bottom: 0;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+	.productDetails {
+		flex-direction: column; /* Switch to column layout on small screens */
+		align-items: center; /* Center content on mobile */
+	}
+
+	.productImageDiv {
+		max-width: 100%; /* Allow image to take full width */
+	}
+
+	.productInfo {
+		width: 100%; /* Make info take full width */
+		align-items: center; /* Center align content on mobile */
+		text-align: center; /* Center text on mobile */
+	}
+}
