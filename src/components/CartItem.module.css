@@ -29,6 +29,11 @@
 	margin: 2px 0;
 }
 
+.itemPrice {
+	font-weight: bold; /* Make the price bold */
+	color: black;
+}
+
 .itemControls {
 	display: flex;
 	align-items: center;
@@ -43,6 +48,8 @@
 
 .removeButton {
 	border-radius: 3px;
+	border-color: grey;
+	color: grey;
 	padding: 5px 10px;
 	cursor: pointer;
 }

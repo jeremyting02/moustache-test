@@ -51,10 +51,9 @@ const ProductDetails = ({ onAddToCart }) => {
 				<p className={styles.productPrice}>${product.price.toFixed(2)}</p>
 				<p>{product.description}</p>
 
-				{/* Size Line */}
 				<div className={styles.sizeLine}>
 					<span className={styles.sizeText}>
-						SIZE<span className={styles.required}>*</span> {selectedSize || ""}
+						SIZE<span className={styles.required}>*</span> <span className={styles.selectedSize}>{selectedSize || ""}</span>
 					</span>
 				</div>
 

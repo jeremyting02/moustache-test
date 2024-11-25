@@ -14,7 +14,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemoveItem }) => {
 
 				{/* Quantity and Price */}
 				<p className={styles.itemQuantityPrice}>
-					{item.quantity}x ${item.price.toFixed(2)}
+					{item.quantity}x <span className={styles.itemPrice}>${item.price.toFixed(2)}</span>
 				</p>
 
 				{/* Item Size */}
@@ -31,7 +31,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemoveItem }) => {
 						-
 					</button>
 					<button className={styles.removeButton} onClick={() => onRemoveItem(item)}>
-						Remove
+						REMOVE
 					</button>
 				</div>
 			</div>

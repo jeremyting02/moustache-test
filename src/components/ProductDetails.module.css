@@ -60,6 +60,10 @@
 	color: red;
 }
 
+.selectedSize {
+	color: black; /* Bold, black color for the selected size */
+}
+
 .sizeButtons button {
 	margin-right: 10px;
 	padding: 10px 15px;
