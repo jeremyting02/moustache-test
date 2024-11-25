@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductDetails from "./components/ProductDetails";
 import Header from "./components/Header";
 import styles from "./App.module.css";
 
 const App = () => {
-	// State to manage the shopping cart, an array of cart items
-	const [cart, setCart] = useState([]);
+	// State to manage the shopping cart, initialized as an empty array
+	const [cart, setCart] = useState(() => {
+		// Retrieve the cart from localStorage when the component initializes
+		const storedCart = localStorage.getItem("cart");
+		return storedCart ? JSON.parse(storedCart) : [];
+	});
+
+	// Persist the cart in localStorage whenever it changes
+	useEffect(() => {
+		localStorage.setItem("cart", JSON.stringify(cart));
+	}, [cart]);
 
 	/**
 	 * Adds a product to the cart.
@@ -58,7 +67,7 @@ const App = () => {
 	return (
 		<div className={styles.appRoot}>
 			<div className={styles.appRoot2}>
-				{/* Header component displays the cart passes through updates/removals */}
+				{/* Header component displays the cart and passes through updates/removals */}
 				<Header cart={cart} onUpdateQuantity={handleUpdateQuantity} onRemoveItem={handleRemoveItem} />
 
 				{/* ProductDetails component displays product information and allows adding to cart */}
